@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4930084159795113082
+--- !u!1 &980317342734943134
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 956880796756748541}
-  - component: {fileID: 5911392591948326905}
-  - component: {fileID: 4277159517297094435}
-  - component: {fileID: -2628122320182334147}
+  - component: {fileID: 980317342734943120}
+  - component: {fileID: 980317342734943121}
   m_Layer: 0
-  m_Name: Green Dot
-  m_TagString: Green Dot
+  m_Name: Column Arrow
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &956880796756748541
+--- !u!4 &980317342734943120
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4930084159795113082}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.4077506, y: 2.392199, z: 0}
+  m_GameObject: {fileID: 980317342734943134}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7342542317557347941}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5911392591948326905
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!212 &980317342734943121
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4930084159795113082}
+  m_GameObject: {fileID: 980317342734943134}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,9 +69,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cf3ff42539a8d864090452c822ff8d58, type: 3}
-  m_Color: {r: 0.01534307, g: 1, b: 0, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 4600e6dfaf6569b4f95feb3adea92fff, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -83,50 +81,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4277159517297094435
-CircleCollider2D:
+--- !u!1 &5281012733686523197
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4930084159795113082}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.33333334
---- !u!114 &-2628122320182334147
-MonoBehaviour:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7342542317557347941}
+  m_Layer: 0
+  m_Name: Column Arrow Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7342542317557347941
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4930084159795113082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 138e2e43264056945bb74665bcda2fb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swipeAngle: 0
-  swipeResist: 1
-  column: 0
-  row: 0
-  otherDot: {fileID: 0}
-  targetX: 0
-  targetY: 0
-  isMatched: 0
-  previousColumn: 0
-  previousRow: 0
-  isColumnBomb: 0
-  isRowBomb: 0
-  rowArrow: {fileID: 1152708486703564214, guid: 9d295ebf3db08dd408bbd8c6b6ac008f,
-    type: 3}
-  columnArrow: {fileID: 5281012733686523197, guid: cb38b00424bb3ec459cea6503d57fd1b,
-    type: 3}
-  isColorBomb: 0
-  colorBomb: {fileID: 3006451462045109804, guid: 554973c7f2b15094d907c52a8bbdecc7,
-    type: 3}
+  m_GameObject: {fileID: 5281012733686523197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.454915, y: 4.5193405, z: -0.4997121}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 980317342734943120}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

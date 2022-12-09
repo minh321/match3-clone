@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum GameState
+{
+    wait,
+    move
+}
 public class Board : MonoBehaviour
 {
+    public GameState currentState = GameState.move;
     public int width;
     public int height;
     public int offSet;
@@ -12,9 +19,12 @@ public class Board : MonoBehaviour
     public GameObject[] dots;
     public GameObject[,] allDots;
     public int remainToDestroy;
+    private FindMatches findMatches;
+    public Dot currentDot;
     // Start is called before the first frame update
     void Start()
     {
+        findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width,height];
         allDots = new GameObject[width, height];
         Setup();
@@ -97,6 +107,11 @@ public class Board : MonoBehaviour
     {
         if(allDots[column,row].GetComponent<Dot>().isMatched)
         {
+            if(findMatches.currentMatches.Count == 4 || findMatches.currentMatches.Count == 7)
+            {
+                findMatches.CheckBomb();
+            }
+            findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
         }
@@ -188,5 +203,9 @@ public class Board : MonoBehaviour
             yield return new WaitForSeconds(.2f);
             DestroyMatches();
         }
+        findMatches.currentMatches.Clear();
+        currentDot = null;
+        yield return new WaitForSeconds(.5f);
+        currentState = GameState.move;
     }
 }
